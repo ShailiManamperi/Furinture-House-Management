@@ -47,7 +47,7 @@ public class DeliveryFrameController {
     public JFXComboBox cmbvehicle;
     public JFXButton btnBill;
     PlaceOrder p1 = orderFrameComtroller.placeOrder;
-    UserDTO u1 = SigninFrameController.u1;
+    UserDTO u1 = LoginFormController.u1;
     double delivery = 0.0;
     
     public CustomerService customerService;
