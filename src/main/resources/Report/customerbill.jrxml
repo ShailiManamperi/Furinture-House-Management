@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="generate bill" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="09bb0f7f-b92c-40c7-98a1-f3fc10fde20d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MysqlDB"/>
+	<parameter name="Cashiername" class="java.lang.String"/>
+	<parameter name="itemprice" class="java.lang.String"/>
+	<parameter name="deliveryprice" class="java.lang.String"/>
+	<parameter name="totalprice" class="java.lang.String"/>
+	<parameter name="customername" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="114" splitType="Stretch">
+			<staticText>
+				<reportElement x="171" y="3" width="259" height="30" uuid="223ea99e-66c6-48a2-a92c-bef771f00684"/>
+				<textElement textAlignment="Center">
+					<font fontName="Algerian" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Wimalasiri Furniture House]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="33" width="180" height="37" uuid="e59c293a-d6c7-4e7b-ba7e-2ee0df9f1302"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[No.112, High Level Road,Kottawa]]></text>
+			</staticText>
+			<image>
+				<reportElement x="33" y="3" width="107" height="96" uuid="07fc0266-0e74-4050-bcb0-b01d243822b3"/>
+				<imageExpression><![CDATA["C:/Users/Admin/Desktop/project by maven/project/src/main/resources/assets/logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="-1" width="120" height="30" uuid="601b8a3d-3fdf-4356-a98a-6fe0ffe3ab9a"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Cashier Name]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="447" y="0" width="100" height="30" uuid="0e68c92f-e056-48f6-9ec6-d308ae1ab55e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="450" y="40" width="100" height="30" uuid="d2c4bafa-1d38-443b-bbfd-d5898ebc3adf"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="-1" width="160" height="30" uuid="89187301-02dc-4fa4-b0bd-343ee5e83cb3"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Cashiername}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="41" width="120" height="30" uuid="95c43dad-bb8f-4d23-8b4f-802d12b44379"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="40" width="150" height="30" uuid="8f2997aa-74ec-4498-9bb2-0568f39a1416"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{customername}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="180" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="60" width="130" height="30" uuid="6a2cae8d-3fb7-4c69-9957-8f7a7c7f34ed"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Price For Items]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="100" width="131" height="30" uuid="7d38bd1c-af62-4e4a-85fb-b428e5db10c7"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Price For delivery]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="140" width="130" height="30" uuid="fbb9f618-96b1-461c-9111-9cc8e89dadb6"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Total Price]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="215" y="60" width="140" height="30" uuid="ed64afd2-2d51-4711-9cda-5db2f0aad130"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{itemprice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="100" width="140" height="30" uuid="6282af8b-1c4d-40ea-b5e9-8b44de044467"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{deliveryprice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="140" width="140" height="30" uuid="eaeb6d5a-4381-4b90-a776-0ff52c237320"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalprice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="10" width="140" height="30" uuid="4b2be00c-b585-4101-89bb-748199fa1855"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Customer Address]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="175" y="10" width="345" height="30" uuid="677b89ec-c7a3-43b7-b2ec-5938df1f03fc"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

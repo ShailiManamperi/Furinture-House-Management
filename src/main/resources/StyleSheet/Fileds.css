@@ -1,0 +1,6 @@
+.text-field{
+    -fx-text-fill: WHITE;
+    -fx-text-alignment: CENTER;
+    -fx-prompt-text-fill: WHITE;
+}
+

@@ -1,0 +1,10 @@
+#btnAdd,#btnLoad{
+//-fx-background-color: #50EF8F;
+    -fx-background-color: linear-gradient(from 82% 90% to 90% 90% , #fafafa, #c4bdbd);
+}#btnAdd:hover,#btnLoad:hover{
+ //-fx-background-color: #50EF8F;
+     -fx-background-color: linear-gradient(from 82% 90% to 90% 90% , #fafafa, #a19c9c);
+ }#btnAdd:pressed,#btnLoad:pressed{
+  //-fx-background-color: #50EF8F;
+      -fx-background-color: linear-gradient(from 82% 90% to 90% 90% , #fafafa, #868383);
+  }

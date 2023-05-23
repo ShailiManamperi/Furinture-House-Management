@@ -1,0 +1,16 @@
+#frame,#background{
+    -fx-fill: linear-gradient(to bottom,#140c0c 20%, #000022 75%,#000000 100%);
+    -fx-background-color: linear-gradient(to bottom,#140c0c 20%, #000022 75%,#000000 100%);
+    -fx-border-radius: 50;
+    -fx-border-color: white;
+}
+#btnLogIn,#btnRegister{
+    -fx-background-color: linear-gradient(to bottom, #33ccff 0%, #3366ff 100%);
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}
+#btnLogIn:hover,#btnRegister:hover{
+    -fx-background-color: linear-gradient(to bottom right,  #3333ff 0%, #0099ff 100%);
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}

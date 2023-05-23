@@ -1,0 +1,18 @@
+#btnSignin,#btnSignup{
+    -fx-border-radius : 100;
+    -fx-border-color: #FFFFFF;
+    -fx-text-fill: #000000;
+}
+#btnSignin:hover,#btnSignup:hover{
+    -fx-background-color: #b9b9b9;
+    -fx-text-fill: #000000;
+}
+#btnSignin:pressed,#btnSignup:pressed{
+    -fx-background-color:#000000;
+    -fx-text-fill: #ffffff;
+}
+#Frame{
+    -fx-background-color: #c5cfe0;
+    -fx-border-radius: 2;
+    -fx-border-color: black;
+}

@@ -1,0 +1,35 @@
+#customerPane{
+
+    -fx-border-color: #68ffe2;
+    -fx-effect: dropshadow( three-pass-box , #7c7878, 8 , 0.0 , 2 , 0 )
+}
+#chartPane{
+
+    -fx-border-color: #eba0f1;
+    -fx-effect: dropshadow( three-pass-box , black , 8 , 0.0 , 2 , 0 )
+}
+#customer1{
+    -fx-background-color: #D4FAFC;
+
+    -fx-border-color: #ff9f9f;
+    -fx-effect: dropshadow( two-pass-box , black , 3 , 0.1 , 0 , 0 )
+}
+#customer2{
+    -fx-background-color: #D4FAFC;
+    -fx-border-color: #45f190;
+    -fx-effect: dropshadow( two-pass-box , black , 3 , 0.0 , 2 , 0 )
+}
+#customer3{
+    -fx-background-color: #D4FAFC;
+    -fx-border-color: #a4f5e8;
+    -fx-effect: dropshadow( two-pass-box , black , 3 , 0.0 , 2 , 0 )
+}
+#customer1>.label,#customer2>.label,#customer3>.label{
+    -fx-text-fill: #212A3E;
+    /*-fx-effect: dropshadow( one-pass-box , black , 0.5 , 0.0 , 0 , 0 )*/
+}
+
+.text-field{
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+}
