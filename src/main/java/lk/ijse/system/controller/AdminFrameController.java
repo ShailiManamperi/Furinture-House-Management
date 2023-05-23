@@ -26,7 +26,7 @@ public class AdminFrameController {
     public JFXButton btnCustomer;
     public JFXButton btnLogout;
     public JFXButton btnDashBoard;
-    UserDTO u1 = SigninFrameController.u1;
+    UserDTO u1 = LoginFormController.u1;
 
     public UserService userService;
     public void initialize() throws IOException {
