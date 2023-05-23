@@ -26,7 +26,7 @@ public class AdminFrameController {
     public JFXButton btnCustomer;
     public JFXButton btnLogout;
     public JFXButton btnDashBoard;
-    UserDTO u1 = SigninFrameController.u1;
+    UserDTO u1 = LoginFormController.u1;
 
     public UserService userService;
     public void initialize() throws IOException {
@@ -56,7 +56,7 @@ public class AdminFrameController {
         UserDTO u2 = new UserDTO(u1.getUsername(),u1.getType(),u1.getPassword(),"No", u1.getHint());
         boolean updateuser = userService.update(u2);
         if (updateuser){
-            Navigation.navigate(Routes.LOGIN, pane);
+            Navigation.navigate(Routes.SIGNIN, pane);
         }
     }
 

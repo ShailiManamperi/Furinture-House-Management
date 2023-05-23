@@ -23,7 +23,7 @@ public class CashierFrameController {
     public JFXButton btnOrder;
     public JFXButton btnLogout;
 
-    UserDTO u1 = SigninFrameController.u1;
+    UserDTO u1 = LoginFormController.u1;
     public UserService userService;
 
     public void initialize() throws IOException {
@@ -40,7 +40,7 @@ public class CashierFrameController {
         UserDTO u2 = new UserDTO(u1.getUsername(),u1.getType(),u1.getPassword(),"No", u1.getHint());
         boolean updateuser = userService.update(u2);
         if (updateuser){
-            Navigation.navigate(Routes.LOGIN, pane);
+            Navigation.navigate(Routes.SIGNIN, pane);
         }
     }
 }
