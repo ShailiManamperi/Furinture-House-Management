@@ -74,7 +74,7 @@ public class orderFrameComtroller {
     public JFXTextField txtdistance;
     public JFXButton btndelivery;
 
-    UserDTO u1 = SigninFrameController.u1;
+    UserDTO u1 = LoginFormController.u1;
 
     private ObservableList<PlaceOrderTM> obList = FXCollections.observableArrayList();
     public static PlaceOrder placeOrder;
