@@ -164,4 +164,32 @@ public class employeeDAOImpl implements employeeDAO {
             throw new RuntimeException("Failed to find the employee details");
         }
     }
+
+    @Override
+    public String findNewEmployeeId() {
+        String empid = null;
+        try {
+            String sql = "SELECT E_id FROM employee ORDER BY E_id DESC LIMIT 1";
+            ResultSet result = DBUtil.executeQuery(sql);
+            if (!result.next()) {
+                empid = generateNextEmployeeId(result.getString(null));
+            }
+            empid = generateNextEmployeeId(result.getString(1));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return empid;
+    }
+
+    private String generateNextEmployeeId(String currentEmployeeId) {
+        if (currentEmployeeId == null) {
+            return "E001";
+        }else{
+            String[] split = currentEmployeeId.split("E");
+            int id = Integer.parseInt(split[1]);
+            id++;
+            String newId = String.format("E%03d", id);
+            return newId;
+        }
+    }
 }

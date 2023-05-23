@@ -66,4 +66,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         return converter.fromEmployee(emDAO.findEmployee(employeeId,type));
     }
+
+    @Override
+    public String generateNewEmployeeId() throws SQLException {
+        String newEmployeeId = emDAO.findNewEmployeeId();
+        return newEmployeeId;
+    }
 }

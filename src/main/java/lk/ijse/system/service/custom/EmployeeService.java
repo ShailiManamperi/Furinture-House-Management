@@ -17,4 +17,7 @@ public interface EmployeeService extends SuperService {
     public boolean deleteEmployee(String employeeId) throws NotFoundException, InUseException, SQLException, ClassNotFoundException;
 
     public employeeDTO searchEmployee(String employeeId, String type) throws NotFoundException;
+
+    public String generateNewEmployeeId() throws SQLException;
+
 }

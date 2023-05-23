@@ -12,4 +12,6 @@ public interface employeeDAO extends CrudDAO<Employee,String> {
 
     public Employee findEmployee(String id, String type);
 
+    public String findNewEmployeeId();
+
 }

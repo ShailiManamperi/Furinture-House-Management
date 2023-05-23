@@ -13,8 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.system.dto.AttendanceDTO;
 import lk.ijse.system.dto.SalaryDTO;
 import lk.ijse.system.dto.employeeDTO;
-import lk.ijse.system.entity.Employee;
-import lk.ijse.system.model.employeeModel;
 import lk.ijse.system.service.ServiceFactory;
 import lk.ijse.system.service.ServiceTypes;
 import lk.ijse.system.service.custom.AttendanceService;
@@ -209,9 +207,9 @@ public class EmployeeFrameController {
 
     public void newEmployeeIdOnAction(ActionEvent actionEvent) {
         try {
-            String orderId = employeeModel.generateNextEmployeeId();
-            txtid.setText(orderId);
-        } catch (SQLException | ClassNotFoundException e) {
+            String empid = employeeService.generateNewEmployeeId();
+            txtid.setText(empid);
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
