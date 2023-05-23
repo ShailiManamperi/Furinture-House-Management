@@ -23,7 +23,7 @@ public class CashierFrameController {
     public JFXButton btnOrder;
     public JFXButton btnLogout;
 
-    UserDTO u1 = SigninFrameController.u1;
+    UserDTO u1 = LoginFormController.u1;
     public UserService userService;
 
     public void initialize() throws IOException {
