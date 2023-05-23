@@ -37,7 +37,7 @@ public class CashierFrameController {
 
     public void logoutOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException, IOException {
         this.userService = ServiceFactory.getInstance().getService(ServiceTypes.USER);
-        UserDTO u2 = new UserDTO(u1.getUsername(),u1.getType(),u1.getPassword(),"No");
+        UserDTO u2 = new UserDTO(u1.getUsername(),u1.getType(),u1.getPassword(),"No", u1.getHint());
         boolean updateuser = userService.update(u2);
         if (updateuser){
             Navigation.navigate(Routes.LOGIN, pane);

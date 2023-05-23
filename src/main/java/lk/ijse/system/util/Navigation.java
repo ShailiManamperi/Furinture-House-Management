@@ -18,11 +18,6 @@ public class Navigation {
         Stage window = (Stage) Navigation.pane.getScene().getWindow();
 
         switch (route) {
-            case LOGIN:
-                window.setTitle("Dashboard");
-                initUI("LoginFrame.fxml");
-                window.centerOnScreen();
-                break;
             case SUPPLIER:
                 window.setTitle("Supplier Management");
                 initUI("SupplierFrame.fxml");
@@ -68,6 +63,10 @@ public class Navigation {
             case DELIVERY:
                 window.setTitle("Cashier Screen");
                 initUI("DeliveryFrame.fxml");
+                break;
+            case SIGNIN:
+                window.setTitle("Login form");
+                initUI("frame.fxml");
                 break;
         }
     }

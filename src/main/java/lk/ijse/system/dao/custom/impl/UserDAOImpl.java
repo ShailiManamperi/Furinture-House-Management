@@ -26,12 +26,13 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean save(User u1) throws SQLException, ClassNotFoundException {
-        String sql = "INSERT INTO user VALUES (?, ? ,?, ?)";
+        String sql = "INSERT INTO user VALUES (?, ? ,?, ?,?)";
         return DBUtil.executeUpdate(sql,
                 u1.getUsername(),
                 u1.getType(),
                 u1.getPassword(),
-                u1.getVerification()
+                u1.getVerification(),
+                u1.getHint()
         );
     }
 
@@ -45,7 +46,8 @@ public class UserDAOImpl implements UserDAO {
                     result.getString(1),
                     result.getString(2),
                     result.getString(3),
-                    result.getString(4)
+                    result.getString(4),
+                    result.getString(5)
             );
         }
         return null;

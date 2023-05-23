@@ -60,19 +60,13 @@ public class MainformController {
 
         KeyFrame keyFrame7 = new KeyFrame(Duration.millis(4000),actionEvent -> {
             try {
-                URL resource = this.getClass().getResource("/view/LoginFrame.fxml");
-                Stage stage = new Stage();
-                AnchorPane container = FXMLLoader.load(resource);
-                AnchorPane pane =(AnchorPane) container.lookup("#subpane");
-                pane.getChildren().clear();
-                URL resource1 = this.getClass().getResource("/view/SigninFrame.fxml");
-                AnchorPane welcome = FXMLLoader.load(resource1);
-                pane.getChildren().add(welcome);
-                stage.setScene(new Scene(container));
-                stage.centerOnScreen();
+                Parent root = FXMLLoader.load(getClass().getResource("/view/frame.fxml"));
                 Stage window = (Stage) recbar.getScene().getWindow();
                 window.hide();
-                stage.show();
+                Stage newStage = new Stage();
+                newStage.setScene(new Scene(root));
+                newStage.centerOnScreen();
+                newStage.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }

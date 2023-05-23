@@ -13,10 +13,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="pane" prefHeight="665.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.system.controller.LoginFormController">
+<AnchorPane fx:id="pane" prefHeight="552.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.system.controller.LoginFormController">
    <children>
-      <ImageView fitHeight="665.0" fitWidth="1105.0" layoutX="-4.0" pickOnBounds="true">
+      <ImageView fitHeight="553.0" fitWidth="1038.0" layoutX="-13.0" layoutY="-1.0" pickOnBounds="true">
          <image>
             <Image url="@../assets/bbakgroung.jpg" />
          </image>
@@ -24,65 +25,99 @@
             <ColorAdjust brightness="-0.21" />
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0b1117bf" height="426.0" layoutX="119.0" layoutY="126.0" opacity="0.81" stroke="BLACK" strokeType="INSIDE" width="848.0" />
-      <Label layoutX="429.0" layoutY="37.0" prefHeight="66.0" prefWidth="266.0" text="WELCOME " textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="45.0" />
-         </font>
-      </Label>
-      <Label layoutX="177.0" layoutY="168.0" text="Sign In" textFill="#e8dedef7">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0b1117bf" height="426.0" layoutX="119.0" layoutY="45.0" opacity="0.81" stroke="BLACK" strokeType="INSIDE" width="819.0" />
+      <Label layoutX="177.0" layoutY="74.0" text="Sign In" textFill="#e8dedef7">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <Separator layoutX="525.0" layoutY="182.0" orientation="VERTICAL" prefHeight="320.0" prefWidth="6.0" />
-      <Button fx:id="btnLogIn" layoutX="258.0" layoutY="469.0" mnemonicParsing="false" onAction="#SigninOnAction" prefHeight="44.0" prefWidth="145.0" text="Sign In">
+      <Separator layoutX="525.0" layoutY="88.0" orientation="VERTICAL" prefHeight="320.0" prefWidth="6.0" />
+      <Button fx:id="btnLogIn" layoutX="258.0" layoutY="375.0" mnemonicParsing="false" onAction="#SigninOnAction" prefHeight="44.0" prefWidth="145.0" text="Sign In">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Label fx:id="lblforgetPassword" layoutX="198.0" layoutY="365.0" onMouseClicked="#hintOnmouseClicked" text="Forgot Password ?" textFill="#ddcdcd">
+      <Label fx:id="lblforgetPassword" layoutX="198.0" layoutY="271.0" onMouseClicked="#hintOnmouseClicked" text="Forgot Password ?" textFill="#ddcdcd">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="593.0" layoutY="173.0" text="Sign Up" textFill="#e8dedef7">
+      <Label layoutX="593.0" layoutY="79.0" text="Sign Up" textFill="#e8dedef7">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <Button fx:id="btnRegister" layoutX="676.0" layoutY="469.0" mnemonicParsing="false" onAction="#SignUpOnAction" prefHeight="44.0" prefWidth="145.0" text="Sign Up">
+      <Button fx:id="btnRegister" layoutX="676.0" layoutY="375.0" mnemonicParsing="false" onAction="#SignUpOnAction" prefHeight="44.0" prefWidth="145.0" text="Sign Up">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Label layoutX="140.0" layoutY="618.0" text="Copyright © 2022 Shaili Manamperi. All Rights Reserved.This project is licensed under the MIT license.">
+      <Label layoutX="134.0" layoutY="497.0" text="Copyright © 2022 Shaili Manamperi. All Rights Reserved.This project is licensed under the MIT license.">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtUserName1" focusColor="#e30b10" layoutX="193.0" layoutY="240.0" prefHeight="45.0" prefWidth="247.0" promptText="User Name" unFocusColor="#f5eeee" />
-      <JFXTextField fx:id="txtUserName" focusColor="#e30b10" layoutX="614.0" layoutY="282.0" prefHeight="45.0" prefWidth="247.0" promptText="Password" unFocusColor="#f5eeee" />
-      <JFXTextField fx:id="txtHint" focusColor="#e30b10" layoutX="616.0" layoutY="384.0" prefHeight="45.0" prefWidth="247.0" promptText="Hint" unFocusColor="#f5eeee" />
-      <JFXTextField fx:id="txtName" focusColor="#e30b10" layoutX="617.0" layoutY="237.0" prefHeight="45.0" prefWidth="247.0" promptText="User Name" unFocusColor="#f5eeee" />
-      <JFXPasswordField fx:id="txtUserPassword" focusColor="#e30b10" layoutX="193.0" layoutY="295.0" prefHeight="45.0" prefWidth="247.0" promptText="Pass Word" unFocusColor="#f5eeee" />
-      <JFXTextField fx:id="txtpassowrd" focusColor="#e30b10" layoutX="193.0" layoutY="295.0" prefHeight="45.0" prefWidth="247.0" unFocusColor="#f5eeee" />
-      <Label fx:id="lblHint" layoutX="324.0" layoutY="363.0" prefHeight="21.0" prefWidth="109.0" textFill="#ddcdcd">
+      <JFXTextField fx:id="txtUserName1" focusColor="#e30b10" layoutX="193.0" layoutY="146.0" prefHeight="45.0" prefWidth="247.0" promptText="User Name" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtUserName" focusColor="#e30b10" layoutX="614.0" layoutY="188.0" prefHeight="45.0" prefWidth="247.0" promptText="Password" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtHint" focusColor="#e30b10" layoutX="616.0" layoutY="290.0" prefHeight="45.0" prefWidth="247.0" promptText="Hint" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtName" focusColor="#e30b10" layoutX="617.0" layoutY="143.0" prefHeight="45.0" prefWidth="247.0" promptText="User Name" unFocusColor="#f5eeee" />
+      <JFXPasswordField fx:id="txtUserPassword" focusColor="#e30b10" layoutX="193.0" layoutY="201.0" prefHeight="45.0" prefWidth="247.0" promptText="Pass Word" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtpassowrd" focusColor="#e30b10" layoutX="193.0" layoutY="201.0" prefHeight="45.0" prefWidth="247.0" unFocusColor="#f5eeee" />
+      <Label fx:id="lblHint" layoutX="324.0" layoutY="269.0" prefHeight="21.0" prefWidth="109.0" textFill="#ddcdcd">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgShow" fitHeight="30.0" fitWidth="30.0" layoutX="403.0" layoutY="304.0" onMouseClicked="#ShowPasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgShow" fitHeight="30.0" fitWidth="30.0" layoutX="403.0" layoutY="211.0" onMouseClicked="#ShowPasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/icons8-eye-48%20(1).png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imghide" fitHeight="30.0" fitWidth="30.0" layoutX="403.0" layoutY="304.0" onMouseClicked="#HidePasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imghide" fitHeight="30.0" fitWidth="30.0" layoutX="403.0" layoutY="211.0" onMouseClicked="#HidePasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/icons8-hide-48%20(1).png" />
          </image>
       </ImageView>
-      <JFXComboBox fx:id="cmbType" layoutX="615.0" layoutY="331.0" prefHeight="45.0" prefWidth="247.0" />
+      <JFXComboBox fx:id="cmbType" layoutX="615.0" layoutY="237.0" prefHeight="45.0" prefWidth="247.0" />
+      <AnchorPane fx:id="slider" layoutX="545.0" layoutY="63.0" prefHeight="383.0" prefWidth="376.0" style="-fx-background-color: #9DB2BF;">
+         <children>
+            <Button fx:id="btncreate" layoutX="115.0" layoutY="294.0" mnemonicParsing="false" onAction="#SignupframOnAction" prefHeight="44.0" prefWidth="145.0" text="Create ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnlogin" layoutX="115.0" layoutY="293.0" mnemonicParsing="false" onAction="#SigninFrameOnAction" prefHeight="44.0" prefWidth="145.0" text="Login">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="130.0" fitWidth="130.0" layoutX="117.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/logo2.jpg" />
+               </image>
+            </ImageView>
+            <Text fx:id="txtwelcome" layoutX="119.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome ">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtgreet" layoutX="101.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Good Moring">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtcreate" layoutX="95.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creating a New Account">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtlogin" layoutX="125.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login to Account">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
    </children>
    <stylesheets>
       <URL value="@../StyleSheet/loginForm.css" />

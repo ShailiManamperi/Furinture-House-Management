@@ -69,11 +69,11 @@ public class Converter {
     }
 
     public UserDTO fromUser(User user){
-        return new UserDTO(user.getUsername(), user.getType(), user.getPassword(), user.getVerification());
+        return new UserDTO(user.getUsername(), user.getType(), user.getPassword(), user.getVerification() ,user.getHint());
     }
 
     public User toUser(UserDTO userDTO){
-        return new User(userDTO.getUsername(), userDTO.getType(), userDTO.getPassword(), userDTO.getVerification());
+        return new User(userDTO.getUsername(), userDTO.getType(), userDTO.getPassword(), userDTO.getVerification() , userDTO.getHint());
     }
 
     public SupplierOrderDTO fromsupplierOrder(Supplier_oder supplier_oder){

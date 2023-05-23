@@ -5,12 +5,14 @@ public class User {
     private String type;
     private String password;
     private String verification;
+    private String hint;
 
-    public User(String username, String type, String password, String verification) {
+    public User(String username, String type, String password, String verification,String hint) {
         this.username = username;
         this.type = type;
         this.password = password;
         this.verification = verification;
+        this.hint=hint;
     }
 
     public String getUsername() {
@@ -43,5 +45,13 @@ public class User {
 
     public void setVerification(String verification) {
         this.verification = verification;
+    }
+
+    public String getHint() {
+        return hint;
+    }
+
+    public void setHint(String hint) {
+        this.hint = hint;
     }
 }
