@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="frame" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.system.controller.CustomerFrameController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Adminbackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="460.0" fitWidth="350.0" layoutX="76.0" layoutY="129.0" opacity="0.48" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/customer.jpg" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtSearch" layoutX="85.0" layoutY="74.0" onAction="#searchOnAction" prefHeight="37.0" prefWidth="333.0" promptText="Search">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fx:id="imgsearch" fitHeight="31.0" fitWidth="28.0" layoutX="54.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-search-100.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="15.0" layoutY="599.0" prefHeight="67.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="btnAdd" onAction="#addCustomerOnAction" prefHeight="72.0" prefWidth="107.0" text="Add">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdate" onAction="#UpdateCustomerOnAction" prefHeight="66.0" prefWidth="108.0" text="Update">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnDelete" onAction="#DeleteCustomerOnAction" prefHeight="80.0" prefWidth="109.0" text="Delete">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnClear" onAction="#ClearCustomerOnAction" prefHeight="73.0" prefWidth="109.0" text="Clear">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+         </padding>
+      </HBox>
+      <VBox layoutX="72.0" layoutY="151.0" prefHeight="455.0" prefWidth="350.0" spacing="45.0">
+         <children>
+            <JFXTextField fx:id="txtcustid" prefHeight="37.0" prefWidth="333.0" promptText="Customer id">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtcustname" prefHeight="37.0" prefWidth="333.0" promptText="Customer Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtaddress" prefHeight="37.0" prefWidth="333.0" promptText="Address">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtnic" prefHeight="37.0" prefWidth="333.0" promptText="Nic">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtcontact" prefHeight="37.0" prefWidth="333.0" promptText="Contact">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="20.0" />
+         </padding>
+      </VBox>
+      <HBox layoutX="399.0" layoutY="70.0" prefHeight="46.0" prefWidth="492.0" spacing="20.0">
+         <children>
+            <JFXRadioButton fx:id="rdbid" text="Customer Id">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rdbnic" text="Customer Nic">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rdbcontact" text="Customer Contact">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXRadioButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </HBox>
+      <TableView fx:id="tblorders" layoutX="537.0" layoutY="173.0" prefHeight="378.0" prefWidth="431.0">
+        <columns>
+          <TableColumn fx:id="coldate" prefWidth="126.3333740234375" text="Date" />
+          <TableColumn fx:id="coloid" prefWidth="119.6666259765625" text="Order id" />
+            <TableColumn fx:id="colprice" prefWidth="99.3333740234375" text="Price" />
+            <TableColumn fx:id="colstatus" prefWidth="82.0" text="Delivery Status" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnNew" layoutX="432.0" layoutY="159.0" onAction="#newCustomeridOnAction" prefHeight="39.0" prefWidth="79.0" text="New">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lbltitle" layoutX="58.0" layoutY="5.0" prefHeight="43.0" prefWidth="336.0" text="Customer Management" textFill="#3646a1">
+         <font>
+            <Font name="High Tower Text Italic" size="35.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#HomePageOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@../StyleSheet/button.css" />
+      <URL value="@../StyleSheet/customer.css" />
+   </stylesheets>
+</AnchorPane>

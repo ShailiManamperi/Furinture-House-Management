@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1270.0" stylesheets="@../StyleSheet/AdminFrame.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.system.controller.AdminFrameController">
+   <children>
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="700.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="270.0" />
+      <AnchorPane fx:id="frame" layoutX="270.0" layoutY="-3.0" prefHeight="700.0" prefWidth="1000.0" />
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="84.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logo.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="46.0" layoutY="195.0" prefHeight="429.0" prefWidth="177.0" spacing="40.0">
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+         </padding>
+         <children>
+            <JFXButton fx:id="btnDashBoard" onAction="#DashbordFrameOnAction" prefHeight="45.0" prefWidth="179.0" text="Dashboard" />
+            <JFXButton fx:id="btnEmployee" onAction="#employeeFrameOnAction" prefHeight="45.0" prefWidth="179.0" text="Employee" />
+            <JFXButton fx:id="btnSupplier" onAction="#supplierFrameOnAction" prefHeight="45.0" prefWidth="179.0" text="Supplier" />
+            <JFXButton fx:id="btnItems" onAction="#itemsFrameOnAction" prefHeight="45.0" prefWidth="179.0" text="Items" />
+            <JFXButton fx:id="btnCustomer" onAction="#customerFrameOnAction" prefHeight="45.0" prefWidth="179.0" text="Customer" />
+            <JFXButton fx:id="btnLogout" onAction="#logoutOnAction" prefHeight="45.0" prefWidth="179.0" text="Logout" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

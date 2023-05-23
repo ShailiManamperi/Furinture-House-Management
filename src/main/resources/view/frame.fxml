@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="665.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.system.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="665.0" fitWidth="1105.0" layoutX="-4.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/bbakgroung.jpg" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="-0.21" />
+         </effect>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0b1117bf" height="426.0" layoutX="119.0" layoutY="126.0" opacity="0.81" stroke="BLACK" strokeType="INSIDE" width="848.0" />
+      <Label layoutX="429.0" layoutY="37.0" prefHeight="66.0" prefWidth="266.0" text="WELCOME " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="45.0" />
+         </font>
+      </Label>
+      <Label layoutX="177.0" layoutY="168.0" text="Sign In" textFill="#e8dedef7">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Separator layoutX="525.0" layoutY="182.0" orientation="VERTICAL" prefHeight="320.0" prefWidth="6.0" />
+      <Button fx:id="btnLogIn" layoutX="258.0" layoutY="469.0" mnemonicParsing="false" onAction="#SigninOnAction" prefHeight="44.0" prefWidth="145.0" text="Sign In">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblforgetPassword" layoutX="198.0" layoutY="365.0" onMouseClicked="#hintOnmouseClicked" text="Forgot Password ?" textFill="#ddcdcd">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="593.0" layoutY="173.0" text="Sign Up" textFill="#e8dedef7">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRegister" layoutX="676.0" layoutY="469.0" mnemonicParsing="false" onAction="#SignUpOnAction" prefHeight="44.0" prefWidth="145.0" text="Sign Up">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="140.0" layoutY="618.0" text="Copyright © 2022 Shaili Manamperi. All Rights Reserved.This project is licensed under the MIT license.">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserName1" focusColor="#e30b10" layoutX="193.0" layoutY="240.0" prefHeight="45.0" prefWidth="247.0" promptText="User Name" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtUserName" focusColor="#e30b10" layoutX="614.0" layoutY="282.0" prefHeight="45.0" prefWidth="247.0" promptText="Password" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtHint" focusColor="#e30b10" layoutX="616.0" layoutY="384.0" prefHeight="45.0" prefWidth="247.0" promptText="Hint" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtName" focusColor="#e30b10" layoutX="617.0" layoutY="237.0" prefHeight="45.0" prefWidth="247.0" promptText="User Name" unFocusColor="#f5eeee" />
+      <JFXPasswordField fx:id="txtUserPassword" focusColor="#e30b10" layoutX="193.0" layoutY="295.0" prefHeight="45.0" prefWidth="247.0" promptText="Pass Word" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtpassowrd" focusColor="#e30b10" layoutX="193.0" layoutY="295.0" prefHeight="45.0" prefWidth="247.0" unFocusColor="#f5eeee" />
+      <Label fx:id="lblHint" layoutX="324.0" layoutY="363.0" prefHeight="21.0" prefWidth="109.0" textFill="#ddcdcd">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgShow" fitHeight="30.0" fitWidth="30.0" layoutX="403.0" layoutY="304.0" onMouseClicked="#ShowPasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-eye-48%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imghide" fitHeight="30.0" fitWidth="30.0" layoutX="403.0" layoutY="304.0" onMouseClicked="#HidePasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-hide-48%20(1).png" />
+         </image>
+      </ImageView>
+      <JFXComboBox fx:id="cmbType" layoutX="615.0" layoutY="331.0" prefHeight="45.0" prefWidth="247.0" />
+   </children>
+   <stylesheets>
+      <URL value="@../StyleSheet/loginForm.css" />
+      <URL value="@../StyleSheet/Fileds.css" />
+   </stylesheets>
+</AnchorPane>

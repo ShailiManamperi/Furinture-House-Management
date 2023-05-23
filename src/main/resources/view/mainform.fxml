@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="496.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.system.controller.MainformController">
+   <children>
+      <ImageView fitHeight="584.0" fitWidth="900.0" layoutX="2.0" layoutY="-2.0" opacity="0.59"
+                 pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/main1.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblmain" alignment="CENTER" layoutX="99.0" layoutY="50.0" opacity="0.88" prefHeight="69.0" prefWidth="652.0"
+             text="Wimalasiri Furniture House" textAlignment="CENTER">
+         <font>
+            <Font name="Harlow Solid Italic" size="47.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblmain2" alignment="CENTER" layoutX="219.0" layoutY="125.0" opacity="0.88" prefHeight="69.0" prefWidth="515.0"
+             text="Management System" textAlignment="CENTER">
+         <font>
+            <Font name="Harlow Solid Italic" size="47.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblcp" alignment="CENTER" layoutX="211.0" layoutY="463.0" prefHeight="17.0" prefWidth="591.0"
+             text="Copyright © 2022 ShailiManamperi. All Rights Reserved.This project is licensed under the MIT license.">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="recbar" arcHeight="5.0" arcWidth="5.0" fill="#eefcffa6" height="28.0" layoutX="140.0" layoutY="373.0"
+                 stroke="#b6e9f3" strokeType="INSIDE" width="669.0" />
+      <Rectangle fx:id="recLoad" arcHeight="5.0" arcWidth="5.0" fill="#abacac" height="28.0" layoutX="140.0" layoutY="373.0"
+                 stroke="#b6e9f3" strokeType="INSIDE" width="161.0" />
+      <Label fx:id="lblLoading" layoutX="276.0" layoutY="412.0" prefHeight="40.0" prefWidth="390.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

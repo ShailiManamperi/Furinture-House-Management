@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="frame" prefHeight="703.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.system.controller.AdminDashboardcontentController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1011.0" layoutX="-8.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Adminbackground.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblgreet" layoutX="34.0" layoutY="13.0" prefHeight="64.0" prefWidth="450.0">
+         <font>
+            <Font name="Bell MT Bold" size="30.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="customerPane" layoutX="54.0" layoutY="87.0" prefHeight="253.0" prefWidth="877.0">
+         <children>
+            <AnchorPane fx:id="customer1" layoutX="49.0" layoutY="21.0" prefHeight="215.0" prefWidth="209.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="22.0" layoutY="15.0" prefHeight="34.0" prefWidth="157.0" text="Best Customer">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblCustname" alignment="CENTER" layoutX="27.0" layoutY="79.0" prefHeight="34.0" prefWidth="157.0" text="Name">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblcustodercount" alignment="CENTER" layoutX="29.0" layoutY="135.0" prefHeight="34.0" prefWidth="157.0" text="Order Count">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customer2" layoutX="333.0" layoutY="22.0" prefHeight="215.0" prefWidth="209.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="27.0" layoutY="15.0" prefHeight="34.0" prefWidth="157.0" text="Best Sell Item">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblItemname" alignment="CENTER" layoutX="8.0" layoutY="75.0" prefHeight="34.0" prefWidth="201.0" text="Item Name">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblitemOrdercount" alignment="CENTER" layoutX="32.0" layoutY="135.0" prefHeight="34.0" prefWidth="157.0" text="Order Count">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customer3" layoutX="622.0" layoutY="21.0" prefHeight="215.0" prefWidth="209.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="26.0" layoutY="17.0" prefHeight="34.0" prefWidth="157.0" text="Today Sale">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblprice" alignment="CENTER" layoutX="28.0" layoutY="77.0" prefHeight="34.0" prefWidth="157.0" text="Price">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblordercount" alignment="CENTER" layoutX="31.0" layoutY="137.0" prefHeight="34.0" prefWidth="157.0" text="Order Count">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="chartPane" layoutX="50.0" layoutY="358.0" prefHeight="320.0" prefWidth="883.0">
+         <children>
+            <BarChart fx:id="bargraph" layoutX="26.0" layoutY="10.0" prefHeight="308.0" prefWidth="829.0" stylesheets="@../StyleSheet/archart.css">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../StyleSheet/Normal.css" />
+      <URL value="@../StyleSheet/ContentForm.css" />
+   </stylesheets>
+</AnchorPane>

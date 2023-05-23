@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="570.0" prefWidth="575.0" stylesheets="@../StyleSheet/Normal.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.system.controller.CustomerdetailframeCOntroller">
+   <children>
+      <ImageView fitHeight="571.0" fitWidth="575.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Desktop.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbltitle" layoutX="9.0" layoutY="8.0" prefHeight="43.0" prefWidth="232.0" text="New Customer" textFill="#3646a1">
+         <font>
+            <Font name="High Tower Text Italic" size="35.0" />
+         </font>
+      </Label>
+      <VBox layoutX="75.0" layoutY="81.0" prefHeight="394.0" prefWidth="360.0" spacing="45.0">
+         <children>
+            <JFXTextField fx:id="txtcustid" prefHeight="37.0" prefWidth="333.0" promptText="Customer id">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtcustname" prefHeight="37.0" prefWidth="333.0" promptText="Customer Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtaddress" prefHeight="37.0" prefWidth="333.0" promptText="Address">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtnic" prefHeight="37.0" prefWidth="333.0" promptText="Nic">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtcontact" prefHeight="37.0" prefWidth="333.0" promptText="Contact">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="20.0" />
+         </padding>
+      </VBox>
+      <JFXButton fx:id="btnAdd" layoutX="434.0" layoutY="482.0" onAction="#addCustomerOnAction" prefHeight="46.0" prefWidth="107.0" text="Add">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

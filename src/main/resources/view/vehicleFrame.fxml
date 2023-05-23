@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="frame" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.system.controller.VehicalFrameController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Adminbackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="460.0" fitWidth="350.0" layoutX="76.0" layoutY="92.0" opacity="0.7"
+                 pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/vehicle.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbltitle" layoutX="58.0" layoutY="5.0" prefHeight="43.0" prefWidth="300.0"
+             text="Vehicle Management" textFill="#3646a1">
+         <font>
+            <Font name="High Tower Text Italic" size="35.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imghome" fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="5.0"
+                 onMouseClicked="#HomepageOnMOuseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logo.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblvehicle" layoutX="550.0" layoutY="119.0" onMouseClicked="#vehicledetailOnMouseClicked"
+                 prefHeight="230.0" prefWidth="391.0">
+        <columns>
+          <TableColumn fx:id="colVid" prefWidth="100.55560302734375" text="vehicle id" />
+          <TableColumn fx:id="coltype" prefWidth="137.44439697265625" text="Type" />
+            <TableColumn fx:id="colNumPlate" prefWidth="151.55560302734375" text="Number Plate" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tbldelivery" layoutX="550.0" layoutY="407.0" prefHeight="257.0" prefWidth="426.0">
+        <columns>
+          <TableColumn fx:id="coldeliveryid" prefWidth="89.0" text="Delivery id" />
+          <TableColumn fx:id="colorderid" prefWidth="124.22222900390625" text="order id" />
+            <TableColumn fx:id="coldistance" prefWidth="113.2222900390625" text="Distance" />
+            <TableColumn fx:id="colamount" prefWidth="99.7777099609375" text="amount" />
+        </columns>
+      </TableView>
+      <HBox layoutX="34.0" layoutY="556.0" prefHeight="67.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="btnAdd" onAction="#addVehicleOnAction" prefHeight="72.0" prefWidth="107.0"
+                       text="Add">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdate" onAction="#UpdateVehicleOnAction" prefHeight="66.0" prefWidth="108.0"
+                       text="Update">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnDelete" onAction="#DeleteVehicleOnAction" prefHeight="80.0" prefWidth="109.0"
+                       text="Delete">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnClear" onAction="#ClearVehicleOnAction" prefHeight="73.0" prefWidth="109.0"
+                       text="Clear">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+         </padding>
+      </HBox>
+      <VBox layoutX="80.0" layoutY="134.0" prefHeight="345.0" prefWidth="350.0" spacing="45.0">
+         <children>
+            <JFXTextField fx:id="txtveid" prefHeight="37.0" prefWidth="333.0" promptText="Vehical id">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXComboBox fx:id="cmbveType" prefHeight="51.0" prefWidth="320.0" promptText="Vehicle Type" />
+            <JFXTextField fx:id="txtveNumplate" prefHeight="37.0" prefWidth="333.0" promptText="Number Plate">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtdrivname" prefHeight="37.0" prefWidth="333.0" promptText="Driver Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="20.0" />
+         </padding>
+      </VBox>
+      <Label layoutX="562.0" layoutY="355.0" prefHeight="38.0" prefWidth="175.0" text="Have to Delivery "
+             textFill="#2b78ae" underline="true">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtsearch" layoutX="575.0" layoutY="62.0" prefHeight="37.0" prefWidth="287.0"
+                    promptText="Search">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="545.0" layoutY="65.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-search-100.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnNew" layoutX="427.0" layoutY="143.0" onAction="#addVehicleIDOnAction"
+                 prefHeight="38.0" prefWidth="89.0" text="New">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+   <stylesheets>
+      <URL value="@../StyleSheet/Normal.css" />
+      <URL value="@../StyleSheet/button.css" />
+   </stylesheets>
+</AnchorPane>
