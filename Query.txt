@@ -198,5 +198,3 @@ INSERT INTO itemssale VALUES('K001','Gold libary cupboard','T002',53000);
 
 INSERT INTO payments VALUES('PA001','P003','october month bill','2022-11-24',2000);
 
-INSERT INTO havepayment VALUES ('HA001','water bill for november',2400);
-
