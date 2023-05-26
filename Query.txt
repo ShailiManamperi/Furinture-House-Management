@@ -1,0 +1,202 @@
+CREATE DATABASE IF NOT EXISTS management;
+USE management;
+CREATE TABLE IF NOT EXISTS Employee(
+	E_id VARCHAR(15) PRIMARY KEY,
+	Name VARCHAR(20) NOT NULL,
+	address TEXT,
+	job VARCHAR(20),
+	salary DOUBLE,
+	Nic VARCHAR(14)
+);
+CREATE TABLE IF NOT EXISTS User(
+	user_id VARCHAR(15) PRIMARY KEY,
+	user_name VARCHAR(10),
+	password VARCHAR(20),
+	verification VARCHAR(10),
+	CONSTRAINT FOREIGN KEY (user_id) REFERENCES Employee (E_id)
+			ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS Customer(
+	C_id VARCHAR(15) PRIMARY KEY,
+	name VARCHAR(45),
+	address TEXT,
+	contact VARCHAR(10)
+);
+CREATE TABLE IF NOT EXISTS item_type(
+	T_id VARCHAR(15) PRIMARY KEY,
+	type VARCHAR(20)
+);
+CREATE TABLE IF NOT EXISTS items(
+	code VARCHAR(15) PRIMARY KEY,
+	name TEXT NOT NULL,
+	T_id VARCHAR(15),
+	price DOUBLE,
+	CONSTRAINT FOREIGN KEY (T_id) REFERENCES item_type (T_id)
+			ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS itemssale(
+	code VARCHAR(15) PRIMARY KEY,
+	name TEXT NOT NULL,
+	T_id VARCHAR(15),
+	price DOUBLE,
+	CONSTRAINT FOREIGN KEY (T_id) REFERENCES item_type (T_id)
+			ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS orders(
+	O_id VARCHAR(15) PRIMARY KEY,
+	date DATE,
+	c_id VARCHAR(15),
+	delivery_status ENUM('YES','NO') NOT NULL
+);
+CREATE TABLE IF NOT EXISTS order_detail(
+	O_id VARCHAR(15),
+	code VARCHAR(15),
+	qty INT,
+	price DOUBLE,
+	CONSTRAINT FOREIGN KEY (O_id) REFERENCES orders (O_id)
+		ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (code) REFERENCES items (code)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS vehical(
+	V_id VARCHAR(15) PRIMARY KEY,
+	type VARCHAR(20),
+	E_id VARCHAR(15),
+	CONSTRAINT FOREIGN KEY (E_id) REFERENCES Employee (E_id)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS delivery(
+	D_id VARCHAR(15) PRIMARY KEY,
+	O_id VARCHAR(15),
+	V_id VARCHAR(15),
+	C_id VARCHAR(15),
+	distance INT,
+	amonut DOUBLE,
+	CONSTRAINT FOREIGN KEY (O_id) REFERENCES orders (O_id)
+			ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (C_id) REFERENCES Customer (C_id)
+			ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (V_id) REFERENCES vehical (V_id)
+			ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS suppliers(
+	sup_id VARCHAR(15) PRIMARY KEY,
+	company VARCHAR(45),
+	supplier_name VARCHAR(45),
+	address TEXT,
+	email TEXT,
+	contact VARCHAR(10)
+);
+CREATE TABLE IF NOT EXISTS supplier_order(
+	so_id VARCHAR(15) PRIMARY KEY,
+	date DATE,
+	sup_id VARCHAR(15),
+	amount DOUBLE,
+	status VARCHAR(45),
+	CONSTRAINT FOREIGN KEY (sup_id) REFERENCES suppliers (sup_id)
+			ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS Supplier_order_detail(
+	so_id VARCHAR(15),
+	code VARCHAR(15),
+	qty INT,
+	price DOUBLE,
+	CONSTRAINT FOREIGN KEY (so_id) REFERENCES supplier_order(so_id )
+		ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (code) REFERENCES items (code)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS item_detail(
+	detail INT PRIMARY KEY AUTO_INCREMENT ,
+	so_id VARCHAR(15),
+	sup_id VARCHAR(15),
+	code VARCHAR(15),
+	qty INT,
+	CONSTRAINT FOREIGN KEY (so_id) REFERENCES supplier_order (so_id)
+			ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (sup_id) REFERENCES suppliers (sup_id)
+			ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (code) REFERENCES items (code)
+			ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS payment_type(
+	pay_id VARCHAR(15) PRIMARY KEY,
+	type VARCHAR(30)
+);
+CREATE TABLE IF NOT EXISTS item_qty(
+	code VARCHAR(15) PRIMARY KEY,
+	qty INT,
+	CONSTRAINT FOREIGN KEY (code) REFERENCES items (code)
+			ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS payments(
+	num VARCHAR(15) PRIMARY KEY,
+	p_id VARCHAR(15),
+	detail VARCHAR(30),
+	date DATE,
+	amount DOUBLE,
+	CONSTRAINT FOREIGN KEY (p_id) REFERENCES payment_type (pay_id)
+			ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS totalin_hand(
+	date DATE PRIMARY KEY,
+	amount DOUBLE
+);
+
+CREATE TABLE IF NOT EXISTS distance(
+	Range VARCHR(20) PRIMARY KEY,
+	amount DOUBLE
+);
+CREATE TABLE IF NOT EXISTS invoice (
+	invoice_id VARCHAR(15) PRIMARY KEY,
+	date DATE,
+	sup_id VARCHAR(15),
+	amount DOUBLE,
+	CONSTRAINT FOREIGN KEY (sup_id ) REFERENCES suppliers(sup_id )
+			ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS havepay_invoice (
+	invoice_id VARCHAR(15) PRIMARY KEY,
+	amount DOUBLE
+);
+CREATE TABLE IF NOT EXISTS havepayment (
+	payid VARCHAR(15) PRIMARY KEY,
+	type TEXT,
+	amount DOUBLE
+);
+CREATE TABLE IF NOT EXISTS havedelivery (
+	did VARCHAR(15) PRIMARY KEY,
+	oid VARCHAR(15)
+);
+
+SHOW TABLES;
+
+INSERT INTO item_type VALUES('T001','Melamine');
+INSERT INTO item_type VALUES('T002','Steel');
+INSERT INTO item_type VALUES('T003','Wooden');
+INSERT INTO item_type VALUES('T004','Mettress');
+INSERT INTO item_type VALUES('T005','Cushion');
+
+INSERT INTO payment_type VALUES('P001','Invoies payment');
+INSERT INTO payment_type VALUES('P002','Electricity Bill');
+INSERT INTO payment_type VALUES('P003','Water Bill');
+INSERT INTO payment_type VALUES('P004','Communication Bill');
+INSERT INTO payment_type VALUES('P005','Employee Salary');
+
+INSERT INTO employee VALUES('E001','Ajith Perera','36B,first lane,walawuwatta,maharagama','Admin',50000,'1978903478v');
+
+INSERT INTO vehical VALUES('V001','Lorry','E002');
+
+INSERT INTO suppliers VALUES('S001','MILRO INDUSTRIES(PVT) LTD','Jayantha Bandara','155/15A,Amuetamulla road,Kottawa,Pannipitiya','milro@sltnet.lk','0113024000');
+
+INSERT INTO user VALUES('E001','Ajith7890','ajith7890','No');
+
+INSERT INTO items VALUES('K001','Gold libary cupboard','T002',52000);
+INSERT INTO itemssale VALUES('K001','Gold libary cupboard','T002',53000);
+
+INSERT INTO payments VALUES('PA001','P003','october month bill','2022-11-24',2000);
+
+INSERT INTO havepayment VALUES ('HA001','water bill for november',2400);
+
