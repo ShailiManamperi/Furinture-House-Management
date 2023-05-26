@@ -196,5 +196,4 @@ INSERT INTO user VALUES('E001','Ajith7890','ajith7890','No');
 INSERT INTO items VALUES('K001','Gold libary cupboard','T002',52000);
 INSERT INTO itemssale VALUES('K001','Gold libary cupboard','T002',53000);
 
-INSERT INTO payments VALUES('PA001','P003','october month bill','2022-11-24',2000);
 
