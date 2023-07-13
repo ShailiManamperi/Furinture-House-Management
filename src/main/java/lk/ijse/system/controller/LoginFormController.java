@@ -192,13 +192,13 @@ public class LoginFormController {
         Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
             if (currentTime.getHour() > 6 && currentTime.getHour() < 12) {
-                txtgreet.setText("Good Morning Admin");
+                txtgreet.setText("Good Morning ");
             } else if (currentTime.getHour() >= 12 && currentTime.getHour() < 16) {
-                txtgreet.setText("Good AfterNoon Admin");
+                txtgreet.setText("Good AfterNoon");
             } else if (currentTime.getHour() >= 16 && currentTime.getHour() < 19) {
-                txtgreet.setText("Good Evening Admin");
+                txtgreet.setText("Good Evening");
             } else {
-                txtgreet.setText("Good Night Admin");
+                txtgreet.setText("Good Night");
             }
         }), new KeyFrame(Duration.seconds(1)));
         time.setCycleCount(Animation.INDEFINITE);
