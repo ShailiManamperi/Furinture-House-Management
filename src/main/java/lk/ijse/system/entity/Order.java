@@ -14,6 +14,12 @@ public class Order implements SuperEntity{
         this.status = status;
         this.price = price;
     }
+    public Order (String date,String oid,double price,String status){
+        this.date=date;
+        this.oid=oid;
+        this.price=price;
+        this.status=status;
+    }
 
     public Order() {
     }

@@ -28,11 +28,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public ObservableList<Order> getAllOrders(String Cid)  {
-        if (orderDAO.existByPk(Cid)){
-            return orderDAO.getAllOrderByCId(Cid);
-        }else {
-            return null;
-        }
+        return orderDAO.getAllOrderByCId(Cid);
     }
 
     @Override

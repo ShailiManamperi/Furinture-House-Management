@@ -129,6 +129,7 @@ public class LoginFormController {
                         new Alert(Alert.AlertType.WARNING, "Something happened!").show();
                     }
                 } catch (SQLException | ClassNotFoundException e) {
+                    new Alert(Alert.AlertType.WARNING,"Duplicate entry!").show();
                     throw new RuntimeException(e);
                 }
             }else{

@@ -74,15 +74,15 @@ public class OrderDAOImpl implements OrderDAO {
     public ObservableList<Order> getAllOrderByCId(String id) {
         try {
             ObservableList<Order> ob = FXCollections.observableArrayList();
-            ResultSet rs = DBUtil.executeQuery("SELECT * FROM orders WHERE O_id =?",id);
+            ResultSet rs = DBUtil.executeQuery("select o.date , o.O_id ,o.price ,o.delivery_status from customer c join orders o on c.C_id = o.c_id where c.C_id =?",id);
             while (rs.next()) {
                 ob.add(new Order(
                         rs.getString(1),
                         rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getDouble(5)));
+                        rs.getDouble(3),
+                        rs.getString(4)));
             }
+            System.out.println(ob);
             return ob;
         } catch (SQLException e) {
             throw new ConstraintViolationException(e);
